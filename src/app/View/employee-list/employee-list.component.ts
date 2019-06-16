@@ -18,7 +18,6 @@ export class EmployeeListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'phone', 'email', 'company', 'date_entry',
                                 'org_num', 'address_1', 'city', 'zip', 'geo', 'pan', 'pin', 'status',
                                 'fee', 'guid', 'date_exit', 'date_first', 'date_recent', 'url', 'action'];
- 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   constructor(private empService: EmployeeService) { }
@@ -31,7 +30,7 @@ export class EmployeeListComponent implements OnInit {
 
   }
 
-  onSelect(emp: Employee): void{
+  onSelect(emp: Employee): void {
     this.employee = emp;
 
     alert('ID: ' + this.employee.id + ',  ' + 'Employee Name: ' + this.employee.name);
