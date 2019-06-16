@@ -1,0 +1,91 @@
+.data-container {
+  height: 600px;
+  overflow: auto;
+}
+
+th.mat-column-action, td.mat-column-action {
+  padding-left: 10px;
+  padding-right: 5px;
+  text-align: center;
+  white-space:nowrap;
+}
+
+.mat-table-sticky:first-child {
+  border-right: 1px solid #e0e0e0;
+}
+
+.mat-table-sticky:last-child {
+  border-left: 1px solid #e0e0e0;
+}
+
+th, td {
+  border-left: 1px solid #e0e0e0;
+  padding: 8px;
+}
+
+th {
+  font: bold;
+}
+
+/*table {
+    width: 100%;
+  }
+
+
+
+
+
+  th.mat-column-id, td.mat-column-id {
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 20px;
+  }
+
+  th.mat-column-name, td.mat-column-name {
+    padding-right: 8px;
+    padding-left: 8px;
+    white-space:nowrap;
+  }
+  
+  th.mat-column-phone, td.mat-column-phone {
+    padding-left: 5px;
+    padding-right: 5px;
+    white-space:nowrap;
+  }
+  
+  th.mat-column-company, td.mat-column-company {
+    padding-left: 5px;
+    padding-right: 5px;
+    white-space:nowrap;
+  }
+
+  th.mat-column-date_entry, td.mat-column-date_entry {
+    padding-left: 5px;
+    padding-right: 5px;
+    white-space:nowrap;
+  }
+
+
+
+  
+  .btn {
+    padding: 5px 15px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .btn:hover {background-color: #3e8e41}
+  
+  .btn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 1px #666;
+    transform: translateY(4px);
+  }
+  */
