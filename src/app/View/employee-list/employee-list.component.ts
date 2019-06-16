@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 
-import {SAMPLEDATA} from '../../Model/sampledata';
 import { Employee } from 'src/app/Model/Employee';
+import { EmployeeService } from '../../Service/employee.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -13,16 +13,20 @@ import { Employee } from 'src/app/Model/Employee';
 export class EmployeeListComponent implements OnInit {
 
   employee: Employee;
+  empServiceResponseData: Employee[];
+  empList = new MatTableDataSource<Employee>();
   displayedColumns: string[] = ['id', 'name', 'phone', 'email', 'company', 'date_entry',
                                 'org_num', 'address_1', 'city', 'zip', 'geo', 'pan', 'pin', 'status',
                                 'fee', 'guid', 'date_exit', 'date_first', 'date_recent', 'url', 'action'];
-  empList = new MatTableDataSource<Employee>(SAMPLEDATA);
+ 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor() { }
+  constructor(private empService: EmployeeService) { }
 
   ngOnInit() {
 
+    this.empServiceResponseData = this.empService.getEmployeeList();
+    this.empList = new MatTableDataSource<Employee>(this.empServiceResponseData);
     this.empList.paginator = this.paginator;
 
   }

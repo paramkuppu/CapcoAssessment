@@ -2,7 +2,7 @@ import {Employee} from './Employee';
 //import {Observable, of} from 'rxjs';
 
 //import EmpData from "./sample_data.json";
-
+/*
 export const SAMPLEDATA: Employee[] = [
 	{
 		"name": "Nell D. Michael",
@@ -4405,3 +4405,4 @@ export const SAMPLEDATA: Employee[] = [
 		"url": "https://capco.com/"
 	}
 ]
+*/
