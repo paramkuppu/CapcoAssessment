@@ -4,6 +4,7 @@ import { EmployeeListComponent } from './View/employee-list/employee-list.compon
 import { SimpleEmployeeListComponent } from './View/simple-employee-list/simple-employee-list.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'registration', pathMatch: 'full'},
   {path: 'employeelist', component: EmployeeListComponent},
   {path: 'simpleemployeelist', component: SimpleEmployeeListComponent}
 ];

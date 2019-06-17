@@ -14,6 +14,8 @@ export class EmployeeListComponent implements OnInit {
 
   employee: Employee;
   empServiceResponseData: Employee[];
+
+  // Material Table configurations and variables
   empList = new MatTableDataSource<Employee>();
   displayedColumns: string[] = ['id', 'name', 'phone', 'email', 'company', 'date_entry',
                                 'org_num', 'address_1', 'city', 'zip', 'geo', 'pan', 'pin', 'status',
@@ -24,13 +26,19 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit() {
 
-    this.empServiceResponseData = this.empService.getEmployeeList();
-    this.empList = new MatTableDataSource<Employee>(this.empServiceResponseData);
-    this.empList.paginator = this.paginator;
+    // Get the data from service and assign to the table
+    this.empService.getEmployeeList()
+        .subscribe(resData => {
+          this.empServiceResponseData = resData;
+          this.empList = new MatTableDataSource<Employee>(this.empServiceResponseData);
+          this.empList.paginator = this.paginator;
+        });
 
   }
 
+  // Event Hander - Row Selection
   onSelect(emp: Employee): void {
+
     this.employee = emp;
 
     alert('ID: ' + this.employee.id + ',  ' + 'Employee Name: ' + this.employee.name);

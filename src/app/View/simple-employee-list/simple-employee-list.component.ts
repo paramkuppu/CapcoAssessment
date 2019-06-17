@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-//import {SAMPLEDATA} from '../../Model/sampledata';
 import { Employee } from 'src/app/Model/Employee';
 import { EmployeeService } from '../../Service/employee.service';
 
@@ -17,7 +16,10 @@ export class SimpleEmployeeListComponent implements OnInit {
 
   ngOnInit() {
 
-    this.empList = this.empService.getEmployeeList();
+    // Get data and assign to table
+    this.empService.getEmployeeList().subscribe(resData => {
+      this.empList = resData;
+    });
 
   }
 
