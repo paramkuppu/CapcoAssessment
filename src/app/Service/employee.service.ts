@@ -14,8 +14,7 @@ export class EmployeeService {
   constructor(private http: HttpClient) {
   }
 
-  public getEmployeeList(): Observable<Employee[]>
-  {
+  public getEmployeeList(): Observable<Employee[]> {
     // Reading JSON File
     return this.http.get<Employee[]>(this.jsonFileName);
 
